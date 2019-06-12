@@ -1,0 +1,28 @@
+﻿@model ULOL.Models.ApiCalls.SummonerByNameV4.SummonerByNameV4Model
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-dark">
+    <tr>
+        <th>name</th>
+        <th>accountId</th>
+        <th>id</th>
+        <th>profileIconId</th>
+        <th>puuid</th>
+        <th>summonerLevel</th>
+        <th>revisionDate</th>
+    </tr>
+
+    <tr>
+        <td>@Model.name         </td>
+        <td>@Model.accountId </td>
+        <td>@Model.id </td>
+        <td>@Model.profileIconId </td>
+        <td>@Model.puuid </td>
+        <td>@Model.summonerLevel </td>
+        <td>@Model.revisionDate </td>
+    </tr>
+</table>

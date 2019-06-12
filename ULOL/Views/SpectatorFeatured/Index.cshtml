@@ -1,0 +1,49 @@
+﻿@model ULOL.Models.APICalls.SpectatorV4.Featured
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                gameId
+            </th>
+            <th>
+                gameStartTime
+            </th>
+            <th>
+                platformId
+            </th>
+            <th>
+                gameMode
+            </th>
+            <th>
+                mapId
+            </th>
+            <th>
+                gameLength
+            </th>
+
+        </tr>
+        @foreach (var game in Model.gameList)
+        {
+        <tr>
+            <td>@game.gameId</td>
+            <td>@game.gameStartTime</td>
+            <td>@game.platformId</td>
+            <td>@game.gameMode</td>
+            <td>@game.mapId</td>
+            <td>@game.gameLength</td>
+        </tr>
+    //public Observers observers { get; set; }
+    //public Participant[] participants { get; set; }
+    //public Bannedchampion[] bannedChampions { get; set; }
+
+}
+    </table>
+</p>
+

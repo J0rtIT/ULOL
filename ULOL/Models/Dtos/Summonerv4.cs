@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 using System.Net;
+using ULOL.Models.ApiCalls;
 
 namespace ULOL.Models.Dtos
 {
     public class Summonerv4
     {
-        public string APIkey { get; set; } = "RGAPI-8bd4fe47-fc05-4f15-8a78-68365e282b99";
 
         public int profileIconId { get; set; }
         public string name { get; set; }
@@ -22,7 +22,7 @@ namespace ULOL.Models.Dtos
         public Summonerv4(string summonerName)
         {
             WebClient wc = new WebClient();
-            wc.Headers.Add("X-Riot-Token", APIkey);
+            wc.Headers.Add("X-Riot-Token", Apikey.apikey);
             wc.Headers.Add("Content-Type", "application/json;charset=utf-8");
 
             string respose = wc.DownloadString($"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summonerName}");

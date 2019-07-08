@@ -2,6 +2,6 @@
 {
     public static class Apikey
     {
-        public const string apikey = "RGAPI-b6664685-04d2-46f4-9277-34b0c14effe4";
+        public const string apikey = "RGAPI-0d8577c5-e655-47f8-a092-0483dbc22096";
     }
 }

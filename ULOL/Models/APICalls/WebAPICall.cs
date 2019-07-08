@@ -46,8 +46,9 @@ namespace ULOL.Models.ApiCalls
                     return responseReader.ReadToEnd();
                 }
             }
-            catch
+            catch (Exception)
             {
+                //todo add message here
             }
             return string.Empty;
         }
@@ -71,9 +72,9 @@ namespace ULOL.Models.ApiCalls
                 }
 
             }
-            catch
+            catch (Exception)
             {
-
+                //TODO: ADD EXCEPTION MESSAGE HERE
             }
             return new SummonerByNameV4Model();
         }
@@ -126,9 +127,6 @@ namespace ULOL.Models.ApiCalls
             {
                 return ex.Message;
             }
-
-            return string.Empty;
-
         }
 
     }

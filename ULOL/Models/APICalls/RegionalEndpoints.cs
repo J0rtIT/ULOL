@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ULOL.Models.ApiCalls
+namespace ULOL.Models.APICalls
 {
     public static class RegionalEndpoints
     {
@@ -21,9 +21,9 @@ namespace ULOL.Models.ApiCalls
             {"PBE","pbe1.api.riotgames.com"}
         };
 
-        public static string GetEndPoint(string Region)
+        public static string GetEndPoint(string region)
         {
-            return RegionalEndpoints.Endpoint[Region];
+            return Endpoint[region];
         }
 
     }

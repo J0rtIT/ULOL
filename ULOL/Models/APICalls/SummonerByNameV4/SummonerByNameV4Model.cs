@@ -1,4 +1,4 @@
-﻿namespace ULOL.Models.ApiCalls.SummonerByNameV4
+﻿namespace ULOL.Models.APICalls.SummonerByNameV4
 {
 
     public class SummonerByNameV4Model

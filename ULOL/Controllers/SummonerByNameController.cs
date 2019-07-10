@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Web.Mvc;
-using ULOL.Models.ApiCalls;
-using ULOL.Models.ApiCalls.SummonerByNameV4;
+using ULOL.Models.APICalls;
+using ULOL.Models.APICalls.SummonerByNameV4;
 
 
 namespace ULOL.Controllers

@@ -1,7 +1,7 @@
-﻿namespace ULOL.Models.ApiCalls
+﻿namespace ULOL.Models.APICalls
 {
-    public static class Apikey
+    public static class ApiKey
     {
-        public const string apikey = "RGAPI-0d8577c5-e655-47f8-a092-0483dbc22096";
+        public const string Apikey = "RGAPI-8c63eab7-d569-4bc6-816c-61dea3bfd494";
     }
 }

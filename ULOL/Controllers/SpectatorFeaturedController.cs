@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Web.Mvc;
-using ULOL.Models.ApiCalls;
+using ULOL.Models.APICalls;
 using ULOL.Models.APICalls.SpectatorV4;
 
 namespace ULOL.Controllers

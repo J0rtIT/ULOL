@@ -4,10 +4,10 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using ULOL.Models.ApiCalls.SummonerByNameV4;
+using ULOL.Models.APICalls.SummonerByNameV4;
 using ULOL.Models.EndPoints;
 
-namespace ULOL.Models.ApiCalls
+namespace ULOL.Models.APICalls
 {
     public class WebApiCall
     {
@@ -20,7 +20,7 @@ namespace ULOL.Models.ApiCalls
         {
             string calling = $"https://{RegionalEndpoints.GetEndPoint("NA")}{Apiendpoints.GetSummonerv4ByName(str)}";
             //client.BaseAddress = new Uri(calling);
-            client.DefaultRequestHeaders.Add("X-Riot-Token", Apikey.apikey);
+            client.DefaultRequestHeaders.Add("X-Riot-Token", ApiKey.Apikey);
             client.DefaultRequestHeaders.Add("ContentType", "application/json");
 
             var res = await client.GetAsync(calling);
@@ -35,7 +35,7 @@ namespace ULOL.Models.ApiCalls
             Request = (HttpWebRequest)WebRequest.Create(calling);
             Request.Method = "GET";
             Request.ContentType = "application/json";
-            Request.Headers.Add("X-Riot-Token", Apikey.apikey);
+            Request.Headers.Add("X-Riot-Token", ApiKey.Apikey);
 
             try
             {
@@ -60,7 +60,7 @@ namespace ULOL.Models.ApiCalls
             Request = (HttpWebRequest)WebRequest.Create(calling);
             Request.Method = "GET";
             Request.ContentType = "application/json";
-            Request.Headers.Add("X-Riot-Token", Apikey.apikey);
+            Request.Headers.Add("X-Riot-Token", ApiKey.Apikey);
 
             try
             {
@@ -92,16 +92,9 @@ namespace ULOL.Models.ApiCalls
             */
 
             string calling = $"https://{RegionalEndpoints.GetEndPoint("NA")}{Apiendpoints.SpectatorFeatured()}";
-            client.DefaultRequestHeaders.Add("X-Riot-Token", Apikey.apikey);
+            client.DefaultRequestHeaders.Add("X-Riot-Token", ApiKey.Apikey);
             client.DefaultRequestHeaders.Add("ContentType", "application/json");
-
-            //SummonerByNameV4 s4 = new SummonerByNameV4();
-
-            var res = await client.GetAsync(calling);
-
-
-            return res.ToString();
-
+            return await client.GetStringAsync(calling);
         }
 
         public string CallSpectatorFeatured()
@@ -111,7 +104,7 @@ namespace ULOL.Models.ApiCalls
             Request = (HttpWebRequest)WebRequest.Create(calling);
             Request.Method = "GET";
             Request.ContentType = "application/json";
-            Request.Headers.Add("X-Riot-Token", Apikey.apikey);
+            Request.Headers.Add("X-Riot-Token", ApiKey.Apikey);
 
             try
             {
@@ -128,6 +121,41 @@ namespace ULOL.Models.ApiCalls
                 return ex.Message;
             }
         }
+
+
+        public async Task<string> CallStatusV3()
+        {
+            string calling = $"https://{RegionalEndpoints.GetEndPoint("NA")}{Apiendpoints.StatusV3()}";
+            //client.BaseAddress = new Uri(calling);
+            client.DefaultRequestHeaders.Add("X-Riot-Token", ApiKey.Apikey);
+            client.DefaultRequestHeaders.Add("ContentType", "application/json");
+            return await client.GetStringAsync(calling);
+        }
+
+        
+        public async Task<string> CallLeagueByQueue()
+        {
+            string calling = $"https://{RegionalEndpoints.GetEndPoint("NA")}{Apiendpoints.LeagueByQueueV4(RankedQueue.GetEndPoint("RANKED_SOLO_5x5"), Tier.GetTier("DIAMOND"), Division.GetDivision("I"))}";
+            //client.BaseAddress = new Uri(calling);
+            client.DefaultRequestHeaders.Add("X-Riot-Token", ApiKey.Apikey);
+            client.DefaultRequestHeaders.Add("ContentType", "application/json");
+            return await client.GetStringAsync(calling);
+        }
+        /*to be implemented*/
+
+        //champion masteries 
+        public async Task<string> CallRankedStatsV3()
+        {
+            string calling = $"https://{RegionalEndpoints.GetEndPoint("NA")}{Apiendpoints.StatusV3()}";
+            //client.BaseAddress = new Uri(calling);
+            client.DefaultRequestHeaders.Add("X-Riot-Token", ApiKey.Apikey);
+            client.DefaultRequestHeaders.Add("ContentType", "application/json");
+            return await client.GetStringAsync(calling);
+        }
+
+
+
+
 
     }
 }

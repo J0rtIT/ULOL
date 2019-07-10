@@ -81,9 +81,6 @@
     <Reference Include="Microsoft.Owin.Security.Twitter, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -192,14 +189,20 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SpectatorFeaturedController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\SummonerByNameController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\APICalls\Apikey.cs" />
+    <Compile Include="Models\APICalls\ApiKey.cs" />
+    <Compile Include="Models\APICalls\Division.cs" />
+    <Compile Include="Models\APICalls\LeagueV4\LeagueV4byQueue.cs" />
+    <Compile Include="Models\APICalls\RankedQueue.cs" />
     <Compile Include="Models\APICalls\RegionalEndpoints.cs" />
     <Compile Include="Models\APICalls\SpectatorV4\Featured.cs" />
+    <Compile Include="Models\APICalls\StatusV3\Status.cs" />
     <Compile Include="Models\APICalls\SummonerByNameV4\SummonerByNameV4Model.cs" />
+    <Compile Include="Models\APICalls\Tier.cs" />
     <Compile Include="Models\APICalls\WebAPICall.cs" />
     <Compile Include="Models\Dtos\Summonerv4.cs" />
     <Compile Include="Models\EndPoints\Apiendpoints.cs" />
@@ -323,10 +326,11 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Status\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="SummonersData\" />
+    <Folder Include="SummonersData\EncryptedData\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
